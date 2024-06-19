@@ -1,0 +1,44 @@
+/* Estilos generales para mat-toolbar */
+.mat-toolbar {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto */
+}
+
+/* Estilos para botones dentro de mat-toolbar */
+.mat-toolbar button, .mat-toolbar a {
+    color: white; /* Color del texto en botones y enlaces */
+    margin-right: 8px; /* Espacio entre botones/enlaces */
+}
+
+.mat-toolbar button:hover, .mat-toolbar a:hover {
+    background-color: #45a049; /* Fondo verde más oscuro al pasar el ratón */
+}
+
+/* Estilos para iconos dentro de mat-toolbar */
+.mat-toolbar .mat-icon {
+    color: white; /* Color de los iconos */
+}
+/* Estilos generales para mat-toolbar en modo vertical */
+.vertical-toolbar {
+    display: flex;
+    flex-direction: column; /* Configura los elementos en una columna */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    width: 200px; /* Ancho fijo para la barra de herramientas */
+    height: 100vh; /* Altura completa de la ventana */
+    position: fixed; /* Fija la barra de herramientas en la izquierda */
+    top: 0;
+    left: 0;
+  }
+  
+  /* Estilos para los botones dentro de la mat-toolbar */
+  .vertical-toolbar button {
+    width: 100%; /* Ocupa todo el ancho del toolbar */
+    text-align: left; /* Alinea el texto de los botones a la izquierda */
+    padding: 12px; /* Espaciado interno de los botones */
+  }
+  
+  /* Estilos para los iconos dentro de la mat-toolbar */
+  .vertical-toolbar .mat-icon {
+    margin-right: 8px; /* Espacio entre icono y texto */
+  }
+  

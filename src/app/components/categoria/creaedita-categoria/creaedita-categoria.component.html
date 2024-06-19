@@ -1,0 +1,33 @@
+<div class="title-container, title" >
+    <div><h1 style="color: #3fcd60; text-align: center; font-weight: bold;">Registro de Categorias</h1></div>
+    <form [formGroup]="form" (submit)="aceptar()" class="example-form" >
+      
+      <mat-form-field *ngIf="edicion">
+        <mat-label>Código del Delivery</mat-label>
+        <input matInput formControlName="codigo" readonly/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Categoria</mat-label>
+        <input matInput formControlName="categoria" />
+        <mat-error *ngIf="form.get('categoria')?.hasError('required')"
+          >EL campo es obligatorio.</mat-error>
+      </mat-form-field> 
+
+      <br />
+
+      <mat-form-field>
+        <mat-label>Descripción</mat-label>
+        <input matInput formControlName="descripcion" />
+        <mat-error *ngIf="form.get('descripcion')?.hasError('required')"
+          >EL campo es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br/>
+      <div fxLayout="row" fxLayoutAlign="center center" class="mt-4">
+      <button mat-raised-button color="warn">Registar</button>
+      <button mat-raised-button color="primary" routerLink="/categorias">Cancelar</button>
+    </div>
+    </form>
+  </div>
+  

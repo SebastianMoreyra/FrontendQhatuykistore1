@@ -1,0 +1,63 @@
+<div class="container">
+    <div><h1 style="color: rgb(86, 197, 142); text-align: center; font-weight: bold;">Lista de Tarjetas</h1></div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="table-green">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="Codigo">
+        <th mat-header-cell *matHeaderCellDef>Código</th>
+        <td mat-cell *matCellDef="let element">{{ element.idTarjeta }}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Titular">
+        <th mat-header-cell *matHeaderCellDef>Titular</th>
+        <td mat-cell *matCellDef="let element">{{ element.titular }}</td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Tipo">
+        <th mat-header-cell *matHeaderCellDef>Tipo</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.tipo }}
+        </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Numero">
+        <th mat-header-cell *matHeaderCellDef>Número</th>
+        <td mat-cell *matCellDef="let element">{{ element.numero }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Ccv">
+        <th mat-header-cell *matHeaderCellDef>CCV</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.ccv }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Fechadevencimiento">
+        <th mat-header-cell *matHeaderCellDef>Fecha de Vencimiento</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.fechaVencimiento }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Direccionfacturacion">
+        <th mat-header-cell *matHeaderCellDef>Dirección de Facturación</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.direccionFacturacion }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="accion1">
+        <th mat-header-cell *matHeaderCellDef>Modificar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-mini-fab color="warn" aria-label="Editar" [routerLink]="['ediciones', element.idTarjeta]">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  

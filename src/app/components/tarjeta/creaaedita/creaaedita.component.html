@@ -1,0 +1,73 @@
+<div class="title-container, title">
+  <div>
+    <h1 style="color: #3fcd60; text-align: center; font-weight: bold">
+      Registro de Tarjetas
+    </h1>
+  </div>
+  <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+    <mat-form-field *ngIf="edicion">
+      <mat-label>Código de la tarjeta</mat-label>
+      <input matInput formControlName="codigo" readonly />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Titular</mat-label>
+      <input matInput formControlName="titular" />
+      <mat-error *ngIf="form.get('titular')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Tipo</mat-label>
+      <input matInput formControlName="tipo" />
+      <mat-error *ngIf="form.get('tipo')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+
+    <br />
+
+    <br />
+    <mat-form-field>
+      <mat-label>Número</mat-label>
+      <input matInput formControlName="numero" />
+      <mat-error *ngIf="form.get('numero')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>CCV</mat-label>
+      <input matInput formControlName="ccv" />
+      <mat-error *ngIf="form.get('ccv')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Fecha de Vencimiento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaVencimiento">
+      <mat-error *ngIf="form.get('fechaVencimiento')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Dirección de Facturación</mat-label>
+      <input matInput formControlName="direccionFacturacion" />
+      <mat-error *ngIf="form.get('direccionFacturacion')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <div fxLayout="row" fxLayoutAlign="center center" class="mt-4">
+      <button mat-raised-button color="warn">Registar</button>
+      <button mat-raised-button color="primary" routerLink="/tarjetas">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

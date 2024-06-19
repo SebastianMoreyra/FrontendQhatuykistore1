@@ -1,0 +1,37 @@
+<div class="container">
+    <div><h1 style="color: rgb(255, 119, 0); text-align: center; font-weight: bold;">Lista de Categorias</h1></div>
+    <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="table-green">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Codigo">
+        <th mat-header-cell *matHeaderCellDef>Código</th>
+        <td mat-cell *matCellDef="let element">{{ element.idCategoria }}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Categoria">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.descripcion }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="accion1">
+        <th mat-header-cell *matHeaderCellDef>Modificar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-mini-fab color="warn" aria-label="Editar" [routerLink]="['ediciones', element.idCategoria]">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  
