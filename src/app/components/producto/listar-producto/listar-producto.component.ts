@@ -18,7 +18,7 @@ import { ProductoService } from '../../../service/producto.service';
   styleUrl: './listar-producto.component.css'
 })
 export class ListarProductoComponent {
-  displayedColumns: string[] = ['Codigo', 'Nombre', 'Descripcion', 'Precio', 'Disponibilidad', 'Fotos','Categoria', 'accion1'];
+  displayedColumns: string[] = ['Codigo', 'Nombre', 'Descripcion', 'Precio', 'Disponibilidad', 'Fotos','c1', 'accion1'];
   dataSource:MatTableDataSource<Productos>=new MatTableDataSource()
   constructor(private pS:ProductoService){}
 

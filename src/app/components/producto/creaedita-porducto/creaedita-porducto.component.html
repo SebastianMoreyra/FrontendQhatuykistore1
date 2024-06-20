@@ -51,17 +51,18 @@
       >
     </mat-form-field>
     <br />
+ 
     <mat-form-field class="example-full-width">
-      <mat-label>Categoria</mat-label>
-      <mat-select formControlName="ccategoria">
+      <mat-label>Usuario</mat-label>
+      <mat-select formControlName="cusuario">
         <mat-option *ngFor="let c of listaCategoria" [value]="c.idCategoria">
-          {{ c.nombre }}
+          {{c.nombre}}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="form.get('ccategoria')?.hasError('required')"
-        >El condominio es obligatorio.</mat-error
-      >
+      <mat-error *ngIf="form.get('cusuario')?.hasError('required')"
+      >El condominio es obligatorio.</mat-error>            
     </mat-form-field>
+
     <br />
     <div fxLayout="row" fxLayoutAlign="center center" class="mt-4">
       <button mat-raised-button color="warn">Registar</button>
