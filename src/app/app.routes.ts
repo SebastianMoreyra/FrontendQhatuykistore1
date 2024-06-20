@@ -8,6 +8,9 @@ import { segGuard } from './guard/seguridad.guard';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { CreaeditaCategoriaComponent } from './components/categoria/creaedita-categoria/creaedita-categoria.component';
+import { Productos } from './models/producto';
+import { CreaeditaPorductoComponent } from './components/producto/creaedita-porducto/creaedita-porducto.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 export const routes: Routes = [
   {
@@ -28,6 +31,20 @@ export const routes: Routes = [
       {
         path: 'ediciones/:id',
         component: CreaeditaComponent,
+      },
+    ],
+  },
+  {
+    path: 'productos',
+    component: ProductoComponent,
+    children: [
+      {
+        path: 'nuevop',
+        component: CreaeditaPorductoComponent,
+      },
+      {
+        path: 'edicionesp/:id',
+        component: CreaeditaPorductoComponent,
       },
     ],
   },

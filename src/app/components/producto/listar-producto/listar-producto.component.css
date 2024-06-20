@@ -1,0 +1,33 @@
+/* Estilos generales para la tabla */
+.table-green {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilos para las celdas de la tabla */
+.table-green th, .table-green td {
+    border: 1px solid #4CAF50; /* Color verde para los bordes */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilo para las cabeceras de la tabla */
+.table-green th {
+    background-color: #4CAF50; /* Fondo verde para las cabeceras */
+    color: white; /* Texto blanco para las cabeceras */
+}
+
+/* Estilo para las filas impares */
+.table-green tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Fondo gris claro para filas impares */
+}
+
+/* Estilo para las filas pares */
+.table-green tr:nth-child(even) {
+    background-color: #e8f5e9; /* Fondo verde claro para filas pares */
+}
+
+/* Estilo para la fila al pasar el ratón por encima */
+.table-green tr:hover {
+    background-color: #a5d6a7; /* Fondo verde más oscuro al pasar el ratón */
+}
