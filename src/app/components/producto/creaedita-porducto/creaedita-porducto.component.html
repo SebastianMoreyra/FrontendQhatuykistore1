@@ -36,14 +36,6 @@
     </mat-form-field>
     <br />
     <mat-form-field>
-      <mat-label>Precio</mat-label>
-      <input matInput formControlName="precio" />
-      <mat-error *ngIf="form.get('precio')?.hasError('required')"
-        >EL campo es obligatorio.</mat-error
-      >
-    </mat-form-field>
-    <br />
-    <mat-form-field>
       <mat-label>Dispoibilidad</mat-label>
       <input matInput formControlName="disponibilidad" />
       <mat-error *ngIf="form.get('disponibilidad')?.hasError('required')"

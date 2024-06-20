@@ -69,7 +69,7 @@ export class CreaeditaPorductoComponent implements OnInit{
       this.producto.precio = this.form.value.precio;
       this.producto.disponibilidad = this.form.value.disponibilidad;
       this.producto.fotos = this.form.value.foto;
-      this.producto.categoria.idCategoria = this.form.value.ccategoria;
+      this.producto.category.idCategoria = this.form.value.ccategoria;
 
 
       if(this.edicion){
@@ -99,7 +99,7 @@ export class CreaeditaPorductoComponent implements OnInit{
           precio: new FormControl(data.precio),
           disponibilidad:new FormControl(data.disponibilidad),
           foto:new FormControl(data.fotos),
-          ccategoria:new FormControl(data.categoria.idCategoria)
+          ccategoria:new FormControl(data.category.idCategoria)
         })
       })
     }
