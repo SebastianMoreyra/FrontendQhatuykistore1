@@ -7,7 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { segGuard } from './guard/seguridad.guard';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
+import { CreaeditaVentaComponent } from './components/venta/creaeditaventa/creaeditaventa.component';
 import { CreaeditaCategoriaComponent } from './components/categoria/creaedita-categoria/creaedita-categoria.component';
+import { VentaComponent } from './components/venta/venta.component';
 
 export const routes: Routes = [
   {
@@ -59,6 +61,22 @@ export const routes: Routes = [
       },
     ],
   },
+
+  {
+    path: 'ventas',
+    component: VentaComponent,
+    children: [
+      {
+        path: 'nuevob',
+        component: CreaeditaVentaComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: CreaeditaVentaComponent,
+      },
+    ],
+  },
+
   {
     path: 'homes',
     component: HomeComponent,    

@@ -1,63 +1,71 @@
-<div class="title-container, title" >
-    <div><h1 style="color: #3fcd60; text-align: center; font-weight: bold;">Registro de Deliveries</h1></div>
-    <form [formGroup]="form" (submit)="aceptar()" class="example-form" >
-      
-      <mat-form-field *ngIf="edicion">
-        <mat-label>Código del Delivery</mat-label>
-        <input matInput formControlName="codigo" readonly/>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Dirección</mat-label>
-        <input matInput formControlName="direccion" />
-        <mat-error *ngIf="form.get('direccion')?.hasError('required')"
-          >EL campo es obligatorio.</mat-error>
-      </mat-form-field> 
-
-      <br />
-
-      <mat-form-field >
-        <mat-label>Estado</mat-label>
-        <mat-select formControlName="estado">
-          <mat-option *ngFor="let d of estados" [value]="d.value">
-            {{ d.viewValue }}
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="form.get('estado')?.hasError('required')"
-          >EL campo es obligatorio.</mat-error
-        >
-      </mat-form-field>
-
-      <br />
-      <mat-form-field>
-        <mat-label>Teléfono</mat-label>
-        <input matInput formControlName="telefono" />
-        <mat-error *ngIf="form.get('telefono')?.hasError('required')"
-          >EL campo es obligatorio.</mat-error
-        >
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-          <mat-label>Referencia</mat-label>
-          <input matInput formControlName="referencia" />
-          <mat-error *ngIf="form.get('referencia')?.hasError('required')">EL campo es obligatorio.</mat-error>
-          </mat-form-field>
-          <br />
-    <mat-form-field class="example-full-width">
-        <mat-label>Usuario</mat-label>
-        <mat-select formControlName="cusuario">
-          <mat-option *ngFor="let c of listaUsuarios" [value]="c.id">
-            {{c.username}}
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="form.get('cusuario')?.hasError('required')"
-        >El condominio es obligatorio.</mat-error>            
-      </mat-form-field>
-      <br/>
-      <div fxLayout="row" fxLayoutAlign="center center" class="mt-4">
-      <button mat-raised-button color="warn">Registar</button>
-      <button mat-raised-button color="primary" routerLink="/deliveries">Cancelar</button>
-    </div>
-    </form>
+<div class="title-container, title">
+  <div>
+    <h1 style="color: #3fcd60; text-align: center; font-weight: bold">
+      Registro de Deliveries
+    </h1>
   </div>
-  
+  <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+    <mat-form-field *ngIf="edicion">
+      <mat-label>Código del Delivery</mat-label>
+      <input matInput formControlName="codigo" readonly />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="direccion" />
+      <mat-error *ngIf="form.get('direccion')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="estado">
+        <mat-option *ngFor="let d of estados" [value]="d.value">
+          {{ d.viewValue }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('estado')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+
+    <br />
+    <mat-form-field>
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono" />
+      <mat-error *ngIf="form.get('telefono')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Referencia</mat-label>
+      <input matInput formControlName="referencia" />
+      <mat-error *ngIf="form.get('referencia')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Usuario</mat-label>
+      <mat-select formControlName="cusuario">
+        <mat-option *ngFor="let c of listaUsuarios" [value]="c.id">
+          {{ c.username }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('cusuario')?.hasError('required')"
+        >El campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <div fxLayout="row" fxLayoutAlign="center center" class="mt-4">
+      <button mat-raised-button color="warn">Registar</button>
+      <button mat-raised-button color="primary" routerLink="/deliveries">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
