@@ -1,0 +1,61 @@
+<div class="title-container, title">
+  <div>
+    <h1 style="color: #3fcd60; text-align: center; font-weight: bold">
+      Registro de Ventas
+    </h1>
+  </div>
+  <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+    <mat-form-field *ngIf="edicion">
+      <mat-label>Código del Venta</mat-label>
+      <input matInput formControlName="codigo" readonly />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Usuario</mat-label>
+      <mat-select formControlName="cusuario">
+        <mat-option *ngFor="let c of listaUsuarios" [value]="c.id">
+          {{ c.username }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('cusuario')?.hasError('required')"
+        >El campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <mat-label>Monto</mat-label>
+      <input matInput formControlName="montoTotal" />
+      <mat-error *ngIf="form.get('montoTotal')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field>
+      <mat-label>Fecha de Venta</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaHora" />
+      <mat-error *ngIf="form.get('fechaHora')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br />
+
+    <br />
+    <div fxLayout="row" fxLayoutAlign="center center" class="mt-4">
+      <button mat-raised-button color="warn">Registar</button>
+      <button mat-raised-button color="primary" routerLink="/ventas">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

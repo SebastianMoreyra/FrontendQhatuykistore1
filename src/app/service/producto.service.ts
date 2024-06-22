@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { enviroment } from '../../environments/enviroment';
+import { Productos } from '../models/producto';
 import { Subject } from 'rxjs';
-import { Venta } from '../models/venta';
 import { HttpClient } from '@angular/common/http';
 const base_url=enviroment.base
 
 @Injectable({
   providedIn: 'root'
 })
-export class VentaService {
-  private url=`${base_url}/ventas`;
-  private listaCambio= new Subject<Venta[]>();
+export class ProductoService {
+  private url=`${base_url}/productos`;
+  private listaCambio= new Subject<Productos[]>();
   constructor(private http:HttpClient) { }
   
   list(){
-    return this.http.get<Venta[]>(this.url);
+    return this.http.get<Productos[]>(this.url);
   }
-  insert(c:Venta){
+  insert(c:Productos){
     return this.http.post(this.url, c);
   }
-  setLista(listaNueva:Venta[]){
+  setLista(listaNueva:Productos[]){
     this.listaCambio.next(listaNueva);
   }
   getLista(){
@@ -27,9 +27,9 @@ export class VentaService {
   }
 
   listId(id:number){
-    return this.http.get<Venta>(`${this.url}/${id}`)
+    return this.http.get<Productos>(`${this.url}/${id}`)
   }
-  update(c:Venta){
+  update(c:Productos){
     return this.http.put(this.url, c);
   }
 }

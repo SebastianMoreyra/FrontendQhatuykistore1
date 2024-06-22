@@ -6,64 +6,67 @@
   </div>
   <form [formGroup]="form" (submit)="aceptar()" class="example-form">
     <mat-form-field *ngIf="edicion">
-      <mat-label>Código del Delivery</mat-label>
+      <mat-label>Código del Producto</mat-label>
       <input matInput formControlName="codigo" readonly />
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Dirección</mat-label>
-      <input matInput formControlName="direccion" />
-      <mat-error *ngIf="form.get('direccion')?.hasError('required')"
-        >EL campo es obligatorio.</mat-error
-      >
-    </mat-form-field>
-
-    <br />
-
-    <mat-form-field>
-      <mat-label>Estado</mat-label>
-      <mat-select formControlName="estado">
-        <mat-option *ngFor="let d of estados" [value]="d.value">
-          {{ d.viewValue }}
-        </mat-option>
-      </mat-select>
-      <mat-error *ngIf="form.get('estado')?.hasError('required')"
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+      <mat-error *ngIf="form.get('nombre')?.hasError('required')"
         >EL campo es obligatorio.</mat-error
       >
     </mat-form-field>
 
     <br />
     <mat-form-field>
-      <mat-label>Teléfono</mat-label>
-      <input matInput formControlName="telefono" />
-      <mat-error *ngIf="form.get('telefono')?.hasError('required')"
+      <mat-label>Descripción</mat-label>
+      <input matInput formControlName="descripcion" />
+      <mat-error *ngIf="form.get('descripcion')?.hasError('required')"
         >EL campo es obligatorio.</mat-error
       >
     </mat-form-field>
     <br />
     <mat-form-field>
-      <mat-label>Referencia</mat-label>
-      <input matInput formControlName="referencia" />
-      <mat-error *ngIf="form.get('referencia')?.hasError('required')"
+      <mat-label>Precio</mat-label>
+      <input matInput formControlName="precio" />
+      <mat-error *ngIf="form.get('precio')?.hasError('required')"
         >EL campo es obligatorio.</mat-error
       >
     </mat-form-field>
     <br />
+    <mat-form-field>
+      <mat-label>Dispoibilidad</mat-label>
+      <input matInput formControlName="disponibilidad" />
+      <mat-error *ngIf="form.get('disponibilidad')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Foto</mat-label>
+      <input matInput formControlName="foto" />
+      <mat-error *ngIf="form.get('foto')?.hasError('required')"
+        >EL campo es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+ 
     <mat-form-field class="example-full-width">
       <mat-label>Usuario</mat-label>
       <mat-select formControlName="cusuario">
-        <mat-option *ngFor="let c of listaUsuarios" [value]="c.id">
-          {{ c.username }}
+        <mat-option *ngFor="let c of listaCategoria" [value]="c.idCategoria">
+          {{c.nombre}}
         </mat-option>
       </mat-select>
       <mat-error *ngIf="form.get('cusuario')?.hasError('required')"
-        >El campo es obligatorio.</mat-error
-      >
+      >El condominio es obligatorio.</mat-error>            
     </mat-form-field>
+
     <br />
     <div fxLayout="row" fxLayoutAlign="center center" class="mt-4">
       <button mat-raised-button color="warn">Registar</button>
-      <button mat-raised-button color="primary" routerLink="/deliveries">
+      <button mat-raised-button color="primary" routerLink="/productos">
         Cancelar
       </button>
     </div>
