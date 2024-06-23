@@ -16,6 +16,8 @@ import { ReportesComponent } from './components/reportes/reportes.component';
 import { Reporte02Component } from './components/reportes/reporte02/reporte02.component';
 import { Reporte03Component } from './components/reportes/reporte03/reporte03.component';
 import { Reporte04Component } from './components/reportes/reporte04/reporte04.component';
+import { Reporte05Component } from './components/reportes/reporte05/reporte05.component';
+import { Reporte06Component } from './components/reportes/reporte06/reporte06.component';
 
 export const routes: Routes = [
   {
@@ -116,6 +118,14 @@ export const routes: Routes = [
       {
         path: 'reporte04',
         component: Reporte04Component,
+      },
+      {
+        path: 'reporte05',
+        component: Reporte05Component,
+      },
+      {
+        path: 'reporte06',
+        component: Reporte06Component,
       },
     ],
     canActivate: [segGuard],

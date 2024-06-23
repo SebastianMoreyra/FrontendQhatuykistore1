@@ -3,6 +3,8 @@ import { enviroment } from '../../environments/enviroment';
 import { Categoria } from '../models/categoria';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { CategoriaXProductoDTO } from '../models/categoriaXProductoDTO';
+import { Observable } from 'rxjs';
 const base_url=enviroment.base
 
 @Injectable({
@@ -12,7 +14,7 @@ export class CategoriaService {
   private url=`${base_url}/categorias`;
   private listaCambio= new Subject<Categoria[]>();
   constructor(private http:HttpClient) { }
-  
+
   list(){
     return this.http.get<Categoria[]>(this.url);
   }
@@ -31,5 +33,17 @@ export class CategoriaService {
   }
   update(c:Categoria){
     return this.http.put(this.url, c);
+  }
+
+  getFrecuencia(): Observable<CategoriaXProductoDTO[]> {
+    return this.http.get<CategoriaXProductoDTO[]>(
+      `${this.url}/consulta`
+    );
+  }
+
+  getCantidad(): Observable<CategoriaXProductoDTO[]> {
+    return this.http.get<CategoriaXProductoDTO[]>(
+      `${this.url}/consulta`
+    );
   }
 }
