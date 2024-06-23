@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { enviroment } from '../../environments/enviroment';
 import { Delivery } from '../models/delivery';
+import { DeliveryxUsuarioDTO } from '../models/deliveryxUsuarioDTO';
 const base_url=enviroment.base
 
 @Injectable({
@@ -31,5 +32,8 @@ export class DeliveryService {
   }
   update(c:Delivery){
     return this.http.put(this.url, c);
+  }
+  getCantidad():Observable<DeliveryxUsuarioDTO[]>{
+    return this.http.get<DeliveryxUsuarioDTO[]>(`${this.url}/consulta02`);
   }
 }

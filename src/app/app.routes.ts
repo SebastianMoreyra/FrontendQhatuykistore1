@@ -10,6 +10,10 @@ import { CategoriaComponent } from './components/categoria/categoria.component';
 import { CreaeditaVentaComponent } from './components/venta/creaeditaventa/creaeditaventa.component';
 import { CreaeditaCategoriaComponent } from './components/categoria/creaedita-categoria/creaedita-categoria.component';
 import { VentaComponent } from './components/venta/venta.component';
+import { ProductoComponent } from './components/producto/producto.component';
+import { CreaeditaPorductoComponent } from './components/producto/creaedita-porducto/creaedita-porducto.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { Reporte02Component } from './components/reportes/reporte02/reporte02.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +36,7 @@ export const routes: Routes = [
         component: CreaeditaComponent,
       },
     ],
+    canActivate: [segGuard],
   },
   {
     path: 'tarjetas',
@@ -46,6 +51,7 @@ export const routes: Routes = [
         component: CreaaeditaComponent,
       },
     ],
+    canActivate: [segGuard],
   },
   {
     path: 'categorias',
@@ -60,6 +66,7 @@ export const routes: Routes = [
         component: CreaeditaCategoriaComponent,
       },
     ],
+    canActivate: [segGuard],
   },
 
   {
@@ -75,6 +82,33 @@ export const routes: Routes = [
         component: CreaeditaVentaComponent,
       },
     ],
+    canActivate: [segGuard],
+  },
+  {
+    path: 'productos',
+    component: ProductoComponent,
+    children: [
+      {
+        path: 'nuevop',
+        component: CreaeditaPorductoComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: CreaeditaPorductoComponent,
+      },
+    ],
+    canActivate: [segGuard],
+  },
+  {
+    path: 'reportes',
+    component: ReportesComponent,
+    children: [
+      {
+        path: 'reporte02',
+        component: Reporte02Component,
+      },
+    ],
+    canActivate: [segGuard], 
   },
 
   {
