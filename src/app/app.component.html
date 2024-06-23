@@ -11,8 +11,15 @@
   <button mat-button [matMenuTriggerFor]="menuCategoria" *ngIf="isOperario()">
     <mat-icon>category</mat-icon>Categoria
   </button>
+  <button mat-button [matMenuTriggerFor]="menuProducto" *ngIf="isOperario()">
+    <mat-icon>grocery</mat-icon>Producto
+  </button>
   <button mat-button [matMenuTriggerFor]="menuVenta" *ngIf="isOperario()">
     <mat-icon>shopping_cart</mat-icon>Venta
+  </button>
+  <button mat-button [matMenuTriggerFor]="menuReport">
+    <mat-icon>file_copy</mat-icon>
+     Reportes
   </button>
   <button mat-button [matMenuTriggerFor]="menuSalir"><mat-icon>person</mat-icon>Usuario</button>
 </mat-toolbar>
@@ -28,6 +35,16 @@
 <mat-menu #menuCategoria="matMenu">
   <button mat-menu-item routerLink="/categorias">Listar</button>
   <button mat-menu-item routerLink="/categorias/nuevoc">Registrar</button>
+</mat-menu>
+<mat-menu #menuProducto="matMenu">
+  <button mat-menu-item routerLink="/productos">Listar</button>
+  <button mat-menu-item routerLink="/productos/nuevop">Registrar</button>
+</mat-menu>
+<mat-menu #menuReport="matMenu">
+  <button mat-menu-item routerLink="/reportes">Cantidad de deliveries por usuario</button>
+  <button mat-menu-item routerLink="/reportes/reporte02">Cantidad de Usuarios por Role</button>
+
+  <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 <mat-menu #menuVenta="matMenu">
   <button mat-menu-item routerLink="/ventas">Listar</button>

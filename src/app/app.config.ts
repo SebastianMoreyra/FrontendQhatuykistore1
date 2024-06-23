@@ -6,6 +6,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 export function tokenGetter(){
   return sessionStorage.getItem("token");
 }
@@ -24,5 +25,5 @@ export const appConfig: ApplicationConfig = {
           disallowedRoutes: ["http://localhost:8084/login/forget"]
         },
       })
-    ), provideAnimationsAsync(),]
+    ), provideAnimationsAsync(), provideCharts(withDefaultRegisterables()),]
 };
