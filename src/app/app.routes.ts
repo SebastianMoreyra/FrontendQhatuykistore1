@@ -14,6 +14,8 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { CreaeditaPorductoComponent } from './components/producto/creaedita-porducto/creaedita-porducto.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { Reporte02Component } from './components/reportes/reporte02/reporte02.component';
+import { Reporte03Component } from './components/reportes/reporte03/reporte03.component';
+import { Reporte04Component } from './components/reportes/reporte04/reporte04.component';
 
 export const routes: Routes = [
   {
@@ -107,14 +109,22 @@ export const routes: Routes = [
         path: 'reporte02',
         component: Reporte02Component,
       },
+      {
+        path: 'reporte03',
+        component: Reporte03Component,
+      },
+      {
+        path: 'reporte04',
+        component: Reporte04Component,
+      },
     ],
-    canActivate: [segGuard], 
+    canActivate: [segGuard],
   },
 
   {
     path: 'homes',
-    component: HomeComponent,    
-    canActivate:[segGuard]// solo construcciones, se debe agregar a cada uno 
+    component: HomeComponent,
+    canActivate:[segGuard]// solo construcciones, se debe agregar a cada uno
 
   },
 ];
